@@ -1,0 +1,9 @@
+black==18.9b0
+inflection==0.3.1
+mypy==0.630
+pytest==3.8
+requests==2.21.0
+singer-python==5.2.3
+snowflake-connector-python==1.7.2
+snowflake-sqlalchemy==1.1.2
+freezegun==1.0.0
