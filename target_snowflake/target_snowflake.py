@@ -246,6 +246,7 @@ class TargetSnowflake:
         self.rows: Dict = {}
 
     def extract_keys(self, stream: str, record: Dict):
+        LOGGER.info(record)
         return tuple(record[key] for key in self.key_properties[stream])
 
     def process_line(self, line: str) -> None:
