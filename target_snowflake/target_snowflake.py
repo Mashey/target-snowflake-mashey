@@ -381,13 +381,14 @@ class TargetSnowflake:
 
             # This buffering makes sure that if we receive multiple rows that
             #  would violate the `key_properties` uniqueness,
-            #  only the last one will be kept.
-            if key_properties:
-                self.rows[stream] = UniqueRecordBuffer(
-                    lambda record: self.extract_keys(stream, record)
-                )
-            else:
-                self.rows[stream] = RecordBuffer()
+            #  only the last one will be kept
+            # MASHEY COMMENT - ATTEMPT AT FIX
+            # if key_properties:
+            #     self.rows[stream] = UniqueRecordBuffer(
+            #         lambda record: self.extract_keys(stream, record)
+            #     )
+            # else:
+            self.rows[stream] = RecordBuffer()
 
             # Keep a template empty record for each stream in order to map
             #  all incoming records against
